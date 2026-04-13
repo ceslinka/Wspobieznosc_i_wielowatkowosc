@@ -27,7 +27,8 @@ class SumArray2 {
 
 class MyThread2 implements Runnable {
     Thread thrd;
-    static SumArray sa = new SumArray();
+
+    static SumArray2 sa = new SumArray2();
     int a[];
     int answer;
 
@@ -56,8 +57,9 @@ public class Synch_instr {
     public static void main(String args[]) {
         int a[] = {1, 2, 3, 4, 5};
 
-        MyThread mt1 = new MyThread("Wątek potomny nr 1", a);
-        MyThread mt2 = new MyThread("Wątek potomny nr 2", a);
+        // POPRAWKA: używamy klasy MyThread2
+        MyThread2 mt1 = new MyThread2("Wątek potomny nr 1", a);
+        MyThread2 mt2 = new MyThread2("Wątek potomny nr 2", a);
 
         try {
             mt1.thrd.join();
