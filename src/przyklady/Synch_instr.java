@@ -44,9 +44,9 @@ class MyThread2 implements Runnable {
         System.out.println(thrd.getName() + " rozpoczyna działanie.");
 
         // Synchronizuje wywołania metody sumArray() na obiekcie 'sa'
-        synchronized(sa) {
+//        synchronized(sa) {
             answer = sa.sumArray(a);
-        }
+//        }
 
         System.out.println(thrd.getName() + " wyliczył sumę równą " + answer);
         System.out.println(thrd.getName() + " kończy działanie.");
@@ -57,7 +57,6 @@ public class Synch_instr {
     public static void main(String args[]) {
         int a[] = {1, 2, 3, 4, 5};
 
-        // POPRAWKA: używamy klasy MyThread2
         MyThread2 mt1 = new MyThread2("Wątek potomny nr 1", a);
         MyThread2 mt2 = new MyThread2("Wątek potomny nr 2", a);
 
