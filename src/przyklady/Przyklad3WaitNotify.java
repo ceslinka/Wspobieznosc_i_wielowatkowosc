@@ -28,12 +28,16 @@ public class Przyklad3WaitNotify {
         SkrzynkaPocztowa skrzynka = new SkrzynkaPocztowa();
 
         // Wątek odbierający (startuje pierwszy)
-        new Thread(() -> skrzynka.odbierzWiadomosc()).start();
+        Thread odbiorca = new Thread(() -> skrzynka.odbierzWiadomosc(), "Watek-odbiorca");
+        odbiorca.start();
 
         // Dajemy mu chwilę, żeby na pewno zdążył zasnąć
         Thread.sleep(2000);
 
         // Wątek nadający (startuje z opóźnieniem)
-        new Thread(() -> skrzynka.zostawWiadomosc("Cześć, uczymy się Javy!")).start();
+        Thread nadawca = new Thread(() -> skrzynka.zostawWiadomosc("Cześć, uczymy się Javy!"), "Watek-nadawca");
+        nadawca.start();
+
+        Thread.sleep(100000);
     }
 }

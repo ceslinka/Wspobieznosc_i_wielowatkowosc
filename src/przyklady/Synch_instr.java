@@ -6,7 +6,7 @@ package przyklady;
 class SumArray2 {
     private int sum;
 
-    // Brak słowa kluczowego synchronized w deklaracji!
+    // Brak słowa synchronized w deklaracji!
     int sumArray(int nums[]) {
         sum = 0; // zeruje sumę
 
@@ -50,6 +50,7 @@ class MyThread2 implements Runnable {
 
         System.out.println(thrd.getName() + " wyliczył sumę równą " + answer);
         System.out.println(thrd.getName() + " kończy działanie.");
+        System.out.println(thrd.getState() + " ... ");
     }
 }
 
