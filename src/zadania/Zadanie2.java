@@ -18,7 +18,7 @@ public class Zadanie2 {
         Pobieranie w2 = new Pobieranie();
         Pobieranie w3 = new Pobieranie();
 
-//        w1.start(); w2.start(); w3.start();
+        w1.start(); w2.start(); w3.start();
 
         try {
             // TODO: Dopisz kod tutaj, aby główny program poczekał na zakończenie w1, w2 i w3
